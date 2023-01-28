@@ -7,10 +7,12 @@ def pascal_triangle(n):
     representing the pascal triangle"""
     if n <= 0:
         return []
+    if (n==1):
+        return [1]
 
     pascal_t = []
 
-    for i in range(num):
+    for i in range(n):
         pascal_t.append([])
         pascal_t[i].append(1)
 
