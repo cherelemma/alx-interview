@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-""" pascal traingle """
 
 def pascal_triangle(n):
     """ A function that return list of pascal traingle """
