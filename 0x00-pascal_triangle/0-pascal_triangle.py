@@ -7,8 +7,6 @@ def pascal_triangle(n):
     representing the pascal triangle"""
     if n <= 0:
         return []
-    if (n==1):
-        return [1]
 
     pascal_t = []
 
