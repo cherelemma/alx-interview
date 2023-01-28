@@ -19,7 +19,7 @@ def pascal_triangle(n):
             y = pascal_t[i-1][j]
             pascal_t[i].append(x+y)
 
-        if(n != 0):
+        if(n != 0 and i != 0):
             pascal_t[i].append(1)
 
     return pascal_t
