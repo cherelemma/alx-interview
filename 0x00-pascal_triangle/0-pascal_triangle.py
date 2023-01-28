@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-''' pascal traingle '''
+""" pascal traingle """
 
 def pascal_triangle(n):
-    ''' A function that return list of pascal traingle '''
+    """ A function that return list of pascal traingle """
     if (n <= 0):
         return []
 
-    pascal_t = [] '''create empty list '''
+    pascal_t = [] """create empty list """
     for i in range(num):
-        pascal_t.append([])  ''' append empty list '''
+        pascal_t.append([])  """ append empty list """
         pascal_t[i].append(1)
 
         for j in range(1, i):
