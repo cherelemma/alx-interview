@@ -1,4 +1,9 @@
+#!/usr/bin/python3
+
+''' pascal traingle '''
+
 def pascal_triangle(n):
+    ''' A function that return list of pascal traingle '''
     if (n <= 0):
         return []
 
@@ -13,4 +18,4 @@ def pascal_triangle(n):
         if(n != 0):
             pascal_t[i].append(1)
 
-    return pascal_t[n-1]
+    return pascal_t
