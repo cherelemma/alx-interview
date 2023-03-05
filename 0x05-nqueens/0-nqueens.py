@@ -5,33 +5,32 @@ import sys
 
 def printSolution(board, n):
     """Print allocated positions to the queen"""
-    b = []
+    solution = []
 
-    for i in range(n):
-        for j in range(n):
-            if j == board[i]:
-                b.append([i, j])
-    print(b)
+    for r in range(n):
+        for c in range(n):
+            if c == board[r]:
+                solution.append([r, c])
+    print(solution)
 
-
-def is_position_safe(board, i, j, r):
+def is_position_safe(board, r, c, row):
     """Checks if the position is safe for the queen"""
-    return board[i] in (j, j - i + r, i - r + j)
+    return board[r] in (c, c - r + row, r - row + c)
 
 
 def safe_positions(board, row, n):
     """Find all safe positions where the queen can be allocated"""
     if row == n:
-        print_board(board, n)
+        printSolution(board, n)
 
     else:
-        for j in range(n):
+        for c in range(n):
             allowed = True
-            for i in range(row):
-                if is_position_safe(board, i, j, row):
+            for r in range(row):
+                if is_position_safe(board, r, c, row):
                     allowed = False
             if allowed:
-                board[row] = j
+                board[row] = c
                 safe_positions(board, row + 1, n)
 
 
@@ -55,5 +54,6 @@ if (n < 4):
     exit(1)
 
 board = create_board(int(n))
+# printSolution(board, n)
 row = 0
 safe_positions(board, row, int(n))
