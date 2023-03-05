@@ -13,6 +13,7 @@ def printSolution(board, n):
                 solution.append([r, c])
     print(solution)
 
+
 def is_position_safe(board, r, c, row):
     """Checks if the position is safe for the queen"""
     return board[r] in (c, c - r + row, r - row + c)
@@ -33,9 +34,11 @@ def recursive_solve(board, row, n):
                 board[row] = c
                 recursive_solve(board, row + 1, n)
 
+
 def create_board(size):
     """Generates the board"""
     return [0 * size for i in range(size)]
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
