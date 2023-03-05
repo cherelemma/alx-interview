@@ -5,10 +5,13 @@ import sys
 
 def printSolution(board, n):
     """Print allocated positions to the queen"""
-    for r in range(n):
-        for c in range(n):
-            if c == board[r]:
-                print(board[r][c], end = " ")
+    b = []
+
+    for i in range(n):
+        for j in range(n):
+            if j == board[i]:
+                b.append([i, j])
+    print(b)
 
 
 def is_position_safe(board, i, j, r):
