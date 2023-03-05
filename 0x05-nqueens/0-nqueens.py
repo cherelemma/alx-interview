@@ -11,21 +11,21 @@ def printSolution(board, n):
                 print(board[r][c], end = " ")
 
 
-def is_safe_position(board, r, c, row):
+def is_position_safe(board, i, j, r):
     """Checks if the position is safe for the queen"""
-    return board[i] in (c, c - r + row, r - row + c)
+    return board[i] in (j, j - i + r, i - r + j)
 
 
 def safe_positions(board, row, n):
     """Find all safe positions where the queen can be allocated"""
     if row == n:
-        printSolution(board, n)
+        print_board(board, n)
 
     else:
-        for c in range(n):
+        for j in range(n):
             allowed = True
-            for r in range(row):
-                if is_safe_position(board, c, r, row):
+            for i in range(row):
+                if is_position_safe(board, i, j, row):
                     allowed = False
             if allowed:
                 board[row] = j
@@ -33,7 +33,7 @@ def safe_positions(board, row, n):
 
 
 def create_board(size):
-    """Fill the board with 0"""
+    """Generates the board"""
     return [0 * size for i in range(size)]
 
 
