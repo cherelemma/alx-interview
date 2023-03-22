@@ -2,19 +2,24 @@
 """Making Change Problem"""
 
 
-def make_change(coins, total):
-    """Determines the fewest number of coins needed \
-        to meet a given amount total"""
+def makeChange(coins, total):
+    """Making Changes"""
     if total <= 0:
         return 0
-
-    current_total = 0
-    used_coins = 0
-    coins = sorted(coins, reverse=True)
-    for coin in coins:
-        r = (total - current_total) // coin
-        current_total += r * coin
-        used_coins += r
-        if current_total == total:
-            return used_coins
-    return -1
+    elif total > 0:
+        newList = sorted(coins[:])
+        newList = list(reversed(newList))
+        count = 0
+        value = total + 0
+        index = 0
+        while value >= 0 and (index < len(newList)):
+            if value >= newList[index]:
+                value = value - newList[index]
+                count += 1
+            elif value < newList[index]:
+                index += 1
+        if index == len(newList):
+            if value != 0:
+                return -1
+            elif value == 0:
+                return
