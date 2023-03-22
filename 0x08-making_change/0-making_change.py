@@ -22,4 +22,4 @@ def makeChange(coins, total):
             if value != 0:
                 return -1
             elif value == 0:
-                return
+                return count
