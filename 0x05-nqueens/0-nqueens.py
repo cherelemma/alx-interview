@@ -52,5 +52,5 @@ if __name__ == "__main__":
         sys.exit(1)
 
     N = int(sys.argv[1])
-    board = create_board(N)
-    solutions = recursive_solve(board, 0, N)
+    myboard = create_board(N)
+    solutions = recursive_solve(myboard, 0, N)
